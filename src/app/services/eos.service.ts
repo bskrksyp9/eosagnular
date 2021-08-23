@@ -31,10 +31,8 @@ export class EosService {
   }
 
   getMBal(bdata2: transData) {
-    return this.http.post<transData>(
-      'http://localhost:5000' + "/getBal",
-      JSON.stringify(bdata2),
-      httpOptions
+    return this.http.get<transData>(
+      'http://localhost:3000' + "/balance"
     )
   }
 
@@ -45,7 +43,7 @@ export class EosService {
 
   addRec(bdata: blockData): Observable<blockData> {
     return this.http.post<blockData>(
-      'http://localhost:5000' + "/submit-data",
+      'http://localhost:3000' + "/transfer",
       JSON.stringify(bdata),
       httpOptions
     );

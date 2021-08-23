@@ -10,6 +10,7 @@ import { transData } from '../services/transfer';
 })
 export class InfoComponent implements OnInit {
   data: any;
+  data2: any;
   bdata = new blockData();
   bdata2 = new transData();
   submitted = false;
@@ -20,7 +21,7 @@ export class InfoComponent implements OnInit {
   ngOnInit() {
     this.data = this.eosService.eos.getAccount('baccount1234');
     console.log(this.data)
-    this.getMBal()
+    // this.getMBal()
   }
 
   // head = 'No Actions'
@@ -30,13 +31,14 @@ export class InfoComponent implements OnInit {
   async addRec() {
     this.submitted = true;
     this.save();
+
   }
 
   private save(): void {
     let data: any;
     console.log(this.bdata);
     this.eosService.addRec(this.bdata).subscribe();
-
+    this.getMBal()
   };
   getMBal() {
 
@@ -46,9 +48,9 @@ export class InfoComponent implements OnInit {
 
     try {
       this.eosService.getMBal(this.bdata2).subscribe(
-        (res) => {
-          this.bdata2 = res
-          console.log('Resdata', this.bdata)
+        (res: any) => {
+          console.log("something", res)
+          this.data2 = res;
         },
         (error) => {
           console.log(error);
@@ -57,7 +59,6 @@ export class InfoComponent implements OnInit {
     } catch (excep) {
       console.log(excep);
     }
-    console.log('Resdata', this.bdata)
   }
 
 
