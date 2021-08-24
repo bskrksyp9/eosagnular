@@ -32,7 +32,7 @@ export class EosService {
 
   getMBal(bdata2: transData) {
     return this.http.get<transData>(
-      'http://localhost:3000' + "/balance"
+      'https://eosdemo.herokuapp.com' + "/balance"
     )
   }
 
@@ -43,7 +43,7 @@ export class EosService {
 
   addRec(bdata: blockData): Observable<blockData> {
     return this.http.post<blockData>(
-      'http://localhost:3000' + "/transfer",
+      'https://eosdemo.herokuapp.com' + "/transfer",
       JSON.stringify(bdata),
       httpOptions
     );
