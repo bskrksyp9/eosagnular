@@ -1,31 +1,30 @@
 <div style="text-align:center">
   <br>
-  <h2>{{data.__zone_symbol__value.account_name}}'s <br>Main Balance</h2> <br> <br>
+  <h2> <br>Transaction Status </h2>
+
+  <div class="blog-post"
+    innerHtml=" {{data?.__zone_symbol__state}} {{ data?.__zone_symbol__value.account_name}} {{data?.__zone_symbol__value.head_block_num}}">
+  </div>
+  <!-- {{data.__zone_symbol__value.account_name}}'s -->
   <h2>
     {{ data2 }}
   </h2>
-
-  <!-- 
-
-  {{head}}
-  <input type="text" placeholder="Amount in EOS" /> -->
-
-  Send EOS
-
   <form #orgForm="ngForm">
-    <input placeholder="From" name="from" [(ngModel)]="bdata.from" type="text" #from="ngModel" class="form-control"
-      required />
-
-    <input placeholder="To" name="to" [(ngModel)]="bdata.to" type="text" #to="ngModel" class="form-control" required />
-
-    <input placeholder="Quantity" name="quantity" [(ngModel)]="bdata.quantity" type="text" #quantity="ngModel"
+    From &nbsp; &nbsp; &nbsp;
+    <input placeholder="EOS Test Account" name="from" [(ngModel)]="bdata.from" type="text" #from="ngModel"
+      class="form-control" required /> <br><br>
+    To &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <input placeholder="EOS Test Account" name="to" [(ngModel)]="bdata.to" type="text" #to="ngModel"
       class="form-control" required />
-    <br><br>
+    <br> <br>
+    Amount &nbsp; <input placeholder="1.0000 SYS" name="quantity" [(ngModel)]="bdata.quantity" type="text"
+      #quantity="ngModel" class="form-control" required />
+    <br><br> <br><br>
     <button class="form-control" type="button" [disabled]="!orgForm.valid" (click)="addRec()" class="btn primary-btn"
       name="submit">
 
 
-      TRANSFER
+      Transfer SYS
     </button>
   </form>
 

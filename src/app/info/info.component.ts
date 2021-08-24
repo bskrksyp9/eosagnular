@@ -14,14 +14,16 @@ export class InfoComponent implements OnInit {
   bdata = new blockData();
   bdata2 = new transData();
   submitted = false;
+  innerHtml = '';
+  innerHtml2 = '';
 
   constructor(private eosService: EosService) {
   }
 
   ngOnInit() {
-    this.data = this.eosService.eos.getAccount('baccount1234');
-    console.log(this.data)
-    // this.getMBal()
+    // 
+    // console.log(this.data)
+    // // this.getMBal()
   }
 
   // head = 'No Actions'
@@ -32,24 +34,23 @@ export class InfoComponent implements OnInit {
     this.submitted = true;
     this.save();
 
+    this.data = this.eosService.eos.getAccount(this.bdata.from);
+    console.log(this.data)
+    this.innerHtml = this.data;
+
+
   }
 
   private save(): void {
     let data: any;
-    console.log(this.bdata);
     this.eosService.addRec(this.bdata).subscribe();
     this.getMBal()
   };
   getMBal() {
 
-    this.bdata2.code = 'baccount1234';
-    this.bdata2.symbol = 'SYS';
-    this.bdata2.account = 'bktestacc123';
-
     try {
       this.eosService.getMBal(this.bdata2).subscribe(
         (res: any) => {
-          console.log("something", res)
           this.data2 = res;
         },
         (error) => {
