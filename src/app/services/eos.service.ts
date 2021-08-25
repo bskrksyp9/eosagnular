@@ -25,9 +25,9 @@ export class EosService {
 
 
   constructor(private http: HttpClient) {
-    // this.eos = Eos['Localnet']({
-    //   httpEndpoint: environment.blockchainUrl
-    // })
+    this.eos = Eos['Localnet']({
+      httpEndpoint: 'https://jungle3.cryptolions.io:443'
+    })
   }
 
   getMBal(bdata2: transData) {
