@@ -1,18 +1,24 @@
 <div style="text-align:center">
   <br>
-  <h2> <br>Transaction Status </h2>
+  Transaction details : (As reflected on <a href="https://jungle3.bloks.io">Junglenet Explorer</a> )
 
-  <div class="blog-post"
-    innerHtml=" {{data?.__zone_symbol__state}} {{ data?.__zone_symbol__value.account_name}} {{data?.__zone_symbol__value.head_block_num}}">
-  </div>
+
   <!-- {{data.__zone_symbol__value.account_name}}'s -->
-  <h2>
-    {{ data2 }}
-  </h2>
+
+  <p align='left'>
+    Status : {{ data3?.receipt.status.toUpperCase() }} <br>
+    Transaction Id : {{ data3?.id }} <br>
+    Block number : {{ data3?.block_num }} <br>
+    Block generated time : {{ data3?.block_time }} <br>
+    Failure reason (if any) : {{  data3?.error_code }} <br>
+    {{ data3?.except }} <br>
+  </p>
+
+
   <form #orgForm="ngForm">
     From &nbsp; &nbsp; &nbsp;
     <input placeholder="EOS Test Account" name="from" [(ngModel)]="bdata.from" type="text" #from="ngModel"
-      class="form-control" required /> <br><br>
+      class="form-control" required /> <br> <br> Available SYS Tokens with you {{data?.__zone_symbol__value}} <br><br>
     To &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
     <input placeholder="EOS Test Account" name="to" [(ngModel)]="bdata.to" type="text" #to="ngModel"
       class="form-control" required />
