@@ -1,38 +1,49 @@
 <div style="text-align:center">
   <br>
-  Transaction details : (As reflected on <a href="https://jungle3.bloks.io">Junglenet Explorer</a> )
+  <h2> Transaction details : (As reflected on <a href="https://jungle3.bloks.io">Junglenet Explorer</a> )
+  </h2>
+  <br>
 
+  <table align="center">
 
-  <!-- {{data.__zone_symbol__value.account_name}}'s -->
+    <tr>
+      <td>Status : {{ data3?.receipt.status.toUpperCase() }}</td>
 
-  <p align='left'>
-    Status : {{ data3?.receipt.status.toUpperCase() }} <br>
-    Transaction Id : {{ data3?.id }} <br>
-    Block number : {{ data3?.block_num }} <br>
-    Block generated time : {{ data3?.block_time }} <br>
-    Failure reason (if any) : {{  data3?.error_code }} <br>
-    {{ data3?.except }} <br>
-  </p>
+    </tr>
+    <tr>
+      <td>Transaction Id : {{ data3?.id }}</td>
+    </tr>
+    <tr>
+      <td>Block number : {{ data3?.block_num }}</td>
+    </tr>
+    <tr>
+      <td>Block generated time : {{ data3?.block_time }}</td>
+    </tr>
+    <tr>
+      <td>Failure reason (if any) : {{  data3?.error_code }}{{ data3?.except }}</td>
+    </tr>
+    <tr>
+      <h4> Total SYS Tokens available {{data?.__zone_symbol__value}}</h4>
+    </tr>
+  </table>
+
+  <br><br>
 
 
   <form #orgForm="ngForm">
     From &nbsp; &nbsp; &nbsp;
     <input placeholder="EOS Test Account" name="from" [(ngModel)]="bdata.from" type="text" #from="ngModel"
-      class="form-control" required /> <br> <br> Available SYS Tokens with you {{data?.__zone_symbol__value}} <br><br>
-    To &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-    <input placeholder="EOS Test Account" name="to" [(ngModel)]="bdata.to" type="text" #to="ngModel"
       class="form-control" required />
+    <br><br>
+    To &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input placeholder="EOS Test Account" name="to" [(ngModel)]="bdata.to"
+      type="text" #to="ngModel" class="form-control" required />
     <br> <br>
     Amount &nbsp; <input placeholder="1.0000 SYS" name="quantity" [(ngModel)]="bdata.quantity" type="text"
       #quantity="ngModel" class="form-control" required />
-    <br><br> <br>
-    <button class="form-control" type="button" [disabled]="!orgForm.valid" (click)="addRec()" class="btn primary-btn"
-      name="submit">
-
-
-      Transfer SYS
+    <br><br>
+    <button size="" class="block" type="button" [disabled]="!orgForm.valid" (click)="addRec()" name="submit">
+      Transfer
     </button>
   </form>
-  Developer : skarabhaa (bskrksyp9@zoho.com)
-  <!-- <button (click)="ifClicked()">Transfer</button> -->
+
 </div>

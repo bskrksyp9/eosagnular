@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'BKoinz Wallet';
+  public showInfoMessage = true;
+
+
+  dismissInfoMessage() {
+    this.showInfoMessage = false;
+  }
+
 }
+
