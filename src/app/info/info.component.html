@@ -38,8 +38,9 @@
     To &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input placeholder="EOS Test Account" name="to" [(ngModel)]="bdata.to"
       type="text" #to="ngModel" class="form-control" required />
     <br> <br>
-    Amount &nbsp; <input placeholder="1.0000 SYS" name="quantity" [(ngModel)]="bdata.quantity" type="text"
-      #quantity="ngModel" class="form-control" required />
+    Amount &nbsp;
+    <input readonly name="quantity" value="1.0000" [(ngModel)]="bdata.quantity" #quantity="ngModel" class="form-control"
+      required />
     <br><br>
     <button size="" class="block" type="button" [disabled]="!orgForm.valid" (click)="addRec()" name="submit">
       Transfer

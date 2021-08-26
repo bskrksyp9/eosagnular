@@ -18,6 +18,7 @@ export class InfoComponent implements OnInit {
   innerHtml = '';
   innerHtml2 = '';
 
+
   constructor(private eosService: EosService) {
   }
 
@@ -25,6 +26,7 @@ export class InfoComponent implements OnInit {
     // this.data = this.eosService.eos.getAccount('baccount1234');
     // console.log(this.data)
     // // this.getMBal()
+    this.bdata.quantity = "1.0000 SYS";
   }
 
   // head = 'No Actions'
@@ -43,7 +45,7 @@ export class InfoComponent implements OnInit {
   }
 
   private save(): void {
-    let data: any;
+
     this.eosService.addRec(this.bdata).subscribe(
       (res: any) => {
         this.data3 = res;
