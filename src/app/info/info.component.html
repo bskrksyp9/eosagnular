@@ -32,11 +32,11 @@
 
   <form #orgForm="ngForm">
     From &nbsp; &nbsp; &nbsp;
-    <input placeholder="EOS Test Account" name="from" [(ngModel)]="bdata.from" type="text" #from="ngModel"
+    <input readonly placeholder="EOS Test Account" name="from" [(ngModel)]="bdata.from" type="text" #from="ngModel"
       class="form-control" required />
     <br><br>
-    To &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input placeholder="EOS Test Account" name="to" [(ngModel)]="bdata.to"
-      type="text" #to="ngModel" class="form-control" required />
+    To &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input readonly placeholder="EOS Test Account" name="to"
+      [(ngModel)]="bdata.to" type="text" #to="ngModel" class="form-control" required />
     <br> <br>
     Amount &nbsp;
     <input readonly name="quantity" value="1.0000" [(ngModel)]="bdata.quantity" #quantity="ngModel" class="form-control"

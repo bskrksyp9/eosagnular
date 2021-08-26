@@ -26,6 +26,8 @@ export class InfoComponent implements OnInit {
     // this.data = this.eosService.eos.getAccount('baccount1234');
     // console.log(this.data)
     // // this.getMBal()
+    this.bdata.from = "baccount1234"
+    this.bdata.to = "bktestacc123";
     this.bdata.quantity = "1.0000 SYS";
   }
 
