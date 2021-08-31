@@ -3,6 +3,9 @@
   <h2> Transaction details : (As reflected on <a href="https://jungle3.bloks.io">Junglenet Explorer</a> )
   </h2>
   <br>
+  <h1>
+    {{data3?.error}}
+  </h1>
 
   <table align="center">
 
@@ -39,7 +42,7 @@
       [(ngModel)]="bdata.to" type="text" #to="ngModel" class="form-control" required />
     <br> <br>
     Amount &nbsp;
-    <input readonly name="quantity" value="1.0000" [(ngModel)]="bdata.quantity" #quantity="ngModel" class="form-control"
+    <input name="quantity" value="1.0000" [(ngModel)]="bdata.quantity" #quantity="ngModel" class="form-control"
       required />
     <br><br>
     <button size="" class="block" type="button" [disabled]="!orgForm.valid" (click)="addRec()" name="submit">

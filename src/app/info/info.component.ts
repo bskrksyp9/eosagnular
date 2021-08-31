@@ -54,6 +54,7 @@ export class InfoComponent implements OnInit {
       },
       (error) => {
         console.log(error);
+        this.data3 = error;
       }
     );
     this.getMBal()
@@ -67,6 +68,7 @@ export class InfoComponent implements OnInit {
         },
         (error) => {
           console.log(error);
+          this.data2 = error;
         }
       );
 
